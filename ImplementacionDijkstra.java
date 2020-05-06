@@ -7,8 +7,8 @@
 // Descripcion: Implemnetación de algoritmod de Dijkstra para hallar el camino mas corto de cada nodo. 
 // 
 // Pendientes: 	Tomar el resultado y almacenarlo en un archivo para su posterior analisis. 
-//
-//
+// 
+// Run: java ImplementacionDijkstra
 //
  
 
