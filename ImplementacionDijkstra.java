@@ -20,7 +20,7 @@ public class ImplementacionDijkstra{
    
     static final int V=8; 								// Número de Nodos o vértices del problema 
 
-    //--->> si pongo 9 debo poner la matriz que esta comentada y marcada aqui como (**) ya que cuenta con mas cantidad de datos. 
+    //--->> si pongo 18 debo poner la matriz que esta comentada y marcada aqui como (**) ya que cuenta con mas cantidad de datos. 
     
 
     /* ===================Implemento el Algoritmo Buscando las menores distancias =======================*/
@@ -78,7 +78,7 @@ public class ImplementacionDijkstra{
 
 
 //V=18				/*                               1  1  1  1  1  1  1  1 */
-//				/* 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7 */	
+//				/* 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7 */
 //       int grafo[][]=new int[][] {{0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
 //                         /*1*/    {6, 0, 0, 0, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  
 //                         /*2*/    {0, 1, 0, 0, 0, 9, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -96,8 +96,7 @@ public class ImplementacionDijkstra{
 //                         /*14*/   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 //                         /*15*/   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 //                         /*16*/   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-//                         /*17*/   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 0, 0, 0, 0},
-//				};
+//                         /*17*/   {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 0, 0, 0, 0}};
 
 
   
@@ -117,9 +116,8 @@ public class ImplementacionDijkstra{
 
   
 /*
- * Este es un Ejemplo de Grafo filas de 0 a 9
- * valor de la variable ** Linea 21
- * static final int V=9;
+ * Este es un Ejemplo de Grafo filas de 0 a n
+ * static final int V=8;
  *
  *
  * */
