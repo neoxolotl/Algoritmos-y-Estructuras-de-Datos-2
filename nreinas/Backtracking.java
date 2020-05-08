@@ -84,7 +84,7 @@ class Backtracking {
         board[i][j] = 0;
     }
 
-    nQueen(1, 4, 4, board); //llamado de la funcion nQueen
+    nQueen(1, 4, 4, board); //llamado de la funcion nQueen le paso la columna y filas columnas y el tablero para que pueda coloar las reinas
 
     //---- Imprimir matriz 
     //
