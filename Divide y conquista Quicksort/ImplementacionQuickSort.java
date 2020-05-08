@@ -5,57 +5,67 @@
 // Autor: 	Fernando G Sosa
 // Año:		2020
 //  
-// Descripcion: Implemnetación de algoritmod de Dijkstra para hallar el camino mas corto de cada nodo. 
+// Descripcion: Implemnetación de algoritmod de QuickSort para efectuar el ordenamiento de un vector dado.  
 // 
-// Pendientes: 	Tomar el resultado y almacenarlo en un archivo para su posterior analisis. 
+// Pendientes: 	mejorar el diseño de la interfaz
 // 
-// Run: java ImplementacionDijkstra
+// Run: java ImplementacionQuickSort
 //
  
+    
  
-public class ImplementacionQuickSort {          
+public class ImplementacionQuickSort {
      
-    private int array[];									//Declaro un Array de enteros
-    private int longitud;									//Declaro una longitud como entero
- 
+    private int array[];
+    private int length;
+								
+    //==========================Funcion sort  =========================================
+    // Recibe como parametro un int Array del tipo vector con valores enteros. 
+    // 
+    // Verifica que el array no sea nulo o igual a 0. 
+    // Luego el dato que traje en la variable Input_Array lo guardo en una variable para enviarlo 
+    // a otra funcion que en este caso se llama quickSort
+    //
+    //
+    public void sort(int[] Input_Array) {
 
+   
+	    System.out.println ("\nArray de ....."+Input_Array.length+".... Elementos");
 
-    //=========================Metodo de ordenamiento ==========================//
-    public void sort(int[] Array_de_entrada) {
-         
-        if (Array_de_entrada == null || Array_de_entrada.length == 0) {
+        if (Input_Array == null || Input_Array.length == 0) {
             return;
         }
-        this.array = Array_de_entrada;
-        longitud = Array_de_entrada.length;
-        quickSort(0, longitud - 1);
+        this.array = Input_Array;
+        length = Input_Array.length;
+        quickSort(0, length - 1);
     }
  
-    //=========================Metodo Quicksort=================================//
-    private void quickSort(int menorIndice, int mayorIndice) {
+    //===========================funcion quickSort =============================================
+    //Recibe como parametro el IndiceMenor y el IndiceMayor lowerIndex y higherIndex. 
+    //
+    // Los valores que recibe los asignamos a las variables enteras i y j con las que calcularemos el pivote
+    // el calculo del pivote se determina dividiendo en dos el vector recibido con la formula
+    // 
+    //  IndiceMenor+(IndiceMayor-IndiceMenor)/2
+    //
+    //
+    //
+    //
+    private void quickSort(int lowerIndex, int higherIndex) {
          
-        int i = menorIndice;
-        int j = mayorIndice;
-
-	// Calculo el numero del pivote. Se esta tomando el pivote como el numero del indice del medio
-        // calculate pivot number, I am taking pivot as middle index number
-
-	int pivot = array[menorIndice+(mayorIndice-menorIndice)/2];
-
-
-	// Dividir en dos arrays 
-	// Divide into two arrays
+        int i = lowerIndex;
+        int j = higherIndex;
+        // ------------------------------Calculo el pivote 
+        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        // -----------------------------Se divide en dos el array 
+	
         while (i <= j) {
 
-	     //
-             // En cada iteración, identificaremos un número del lado izquierdo que
-             // es mayor que el valor de pivote, y también identificaremos un número
-             // desde el lado derecho, que es menor que el valor de pivote. Una vez que la búsqueda
-             // está hecho, luego intercambiamos ambos números.
-             //
-
-
-
+		//En cada iteración, identificaremos un número del lado izquierdo que
+             	//es mayor que el valor de pivote, y también identificaremos un número
+             	//desde el lado derecho, que es menor que el valor de pivote. Una vez que la búsqueda
+             	//está hecho, luego intercambiamos ambos números.
+		
 
             while (array[i] < pivot) {
                 i++;
@@ -64,33 +74,44 @@ public class ImplementacionQuickSort {
                 j--;
             }
             if (i <= j) {
-                exchangeNumbers(i, j);
-                //move index to next position on both sides
+                exchange_Numberss(i, j);
+
+                // movemos el indice a la siguiente posicion en ambos lados.
+		//
+
                 i++;
                 j--;
             }
         }
-        // call quickSort() method recursively
-        if (menorIndice < j)
-            quickSort(menorIndice, j);
-        if (i < mayorIndice)
-            quickSort(i, mayorIndice);
+        // Llamamos la funcion quickSort() de forma recursiva 
+	//
+	
+        if (lowerIndex < j)
+            quickSort(lowerIndex, j);
+        if (i < higherIndex)
+            quickSort(i, higherIndex);
     }
  
-    private void exchangeNumbers(int i, int j) {
+    // Funcion exchange_Numbers se encarga de realizar el intercambio de ambos numeros. 
+    //
+    
+    private void exchange_Numberss(int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-     
+    // ======================================================================Inicio del programa 
+    // Inicializacion del objeto y comienzo 
+    //
     public static void main(String a[]){
          
         ImplementacionQuickSort sorter = new ImplementacionQuickSort();
-        int[] input = {24,2,45,20,56,75,2,56,99,53,12};
+        int[] input = {6,60,90,9,8,98,32,43,55,21,1,2,4,79,80};
         sorter.sort(input);
         for(int i:input){
             System.out.print(i);
             System.out.print(" ");
         }
     }
+
 }
