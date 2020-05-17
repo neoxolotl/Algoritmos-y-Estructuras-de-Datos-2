@@ -12,6 +12,7 @@ public class ClasePrincipal {
 
 		//segundo estado cuando se manda a ejecutar
 		hilo1.start();
+		
 
 
 //Nota
@@ -22,24 +23,29 @@ public class ClasePrincipal {
 		//3er estado bloqueo duermo el hilo por 1 segundo ya  en milisegundos.
 		//
 		
-		hilo1.sleep(3000);
+		hilo1.sleep(1000);
 		}catch(InterruptedException e){
-			System.out.println("Error en el hilo1 " + e);
+			System.out.println("Error en el hilo 1 " + e);
 
 		}
 
 
 
 		hilo2.start();
-
+// en este caso vamos a colocar el metodo stop para provocar la muerte del hilo2 	
+// si quiero puedo comentar la siguiete linea para que se ejecute. 
+		hilo2.stop();
 
 		try {
 
-		hilo2.sleep(2000);
+		hilo2.sleep(1000);
 
 		}catch(InterruptedException e){
-			System.out.println("Error en el hilo2 " + e);
+			System.out.println("Error en el hilo 2 " + e);
 		}
+
+
+
 
 	}
 }
