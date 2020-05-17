@@ -1,0 +1,20 @@
+Trabajo práctico 1
+Concurrencia - Hilos en Java
+1- Desarrollar una clase que implemente la interfaz Runnable. De esta forma
+podremos crear múltiples hilos que ejecuten el mismo método run de esta clase
+accediendo al mismo espacio de memoria de este objeto. Ejecutar el programa,
+ver lo que hace.
+2- Desarrollar una clase que extienda de la clase Thread. De esta forma podremos
+crear múltiples hilos que ejecuten el mismo método run de esta clase accediendo al
+mismo espacio de memoria de este objeto. Ejecutar el programa, ver lo que hace.
+3- Desarrollar un programa que implemente una carrera de hilos, donde cada
+competidor muestre en pantalla su avance por medio de un contador. Y evaluar
+los resultados.
+4- En base a ejercicio anterior, asignar prioridades a los distintos competidores. Y
+evaluar los resultados.
+5- Sincronizar hilos. Realizar un ejemplo de sincronización de hilos, donde un hilo
+sea el productor de un contenido y el otro hilo en consumidor. Ambos hilos
+deberán trabajar conjunto, donde el primero entrega un número y queda a espera
+del segundo hilo, que lo muestre en pantalla. Una vez que el número fue
+consumido, el hilo inicial vuelve a generar un número y se repite el ciclo unas 10
+iteraciones.
