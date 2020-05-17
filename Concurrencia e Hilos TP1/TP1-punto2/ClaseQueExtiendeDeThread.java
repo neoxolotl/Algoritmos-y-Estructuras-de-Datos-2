@@ -6,7 +6,7 @@ ver lo que hace.
 */
 
 
-public class Proceso extends Thread{
+public class ClaseQueExtiendeDeThread extends Thread{
 
 		
 	int numero_int;
@@ -17,7 +17,7 @@ Como al poner this.getName() muestra por pantalla
 Tengo que poner un constructor. 
 */
 
-	public Proceso (String NombreHilo){
+	public ClaseQueExtiendeDeThread (String NombreHilo){
 		super(NombreHilo);
 	
 	}
