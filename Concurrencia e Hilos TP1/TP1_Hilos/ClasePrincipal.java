@@ -1,31 +1,47 @@
-// para poder usar lo que esta en una clase completamente diferente 
-// debemos usar instancias. 
-
 public class ClasePrincipal {
-    
-    
-    
-    public static void main(String[] args){
-    
-	//creo la instancia para crear un hilo  
-	//lo debo hacer siempre que uso el extends Threads   
-	
-	
 
-	//cuando uso implements runable 
-	//debo crear un objeto de la clase Theads porque no estoy heredando
-	//de la clase Threads. 
-	// le pongo un parametro para que vaya a la clase de proceso 2 
-	// porque  solo lo uso cuando dice Implements Runable 
-	
-	Thread hilo = new Thread(new Proceso());
+    public static void main (String[] args){
+        Hilo1 hilo1=new Hilo1();
+        Hilo2 hilo2=new Hilo2();
+        Hilo3 hilo3=new Hilo3();
+        Hilo4 hilo4=new Hilo4();
 
-	//despues uso un metodo que permita el arranque de los hilos 
-	// los pongo a hilo1 e hilo2 
-	// cada vez que ejecute el programa se va a a ejecutar de forma 
-	// diferente
+        //hilo1
+        hilo1.start();
+        try{
+            hilo1.sleep(10);
 
-	hilo.start(); 
+        }catch (InterruptedException e) {
+                    System.out.println("Error en el hilo 1 "+e);
+        }
+
+        //hilo2
+        hilo2.start();
+        try{
+            hilo1.sleep(10);
+
+        }catch (InterruptedException e) {
+                    System.out.println("Error en el hilo 2 "+e);
+        }
+
+        //hilo3
+        hilo3.start();
+        try{
+            hilo1.sleep(10);
+
+        }catch (InterruptedException e) {
+                    System.out.println("Error en el hilo 3 "+e);
+        }
+
+        //hilo4
+        hilo4.start();
+        try{
+            hilo1.sleep(10);
+
+        }catch (InterruptedException e) {
+                    System.out.println("Error en el hilo 4 "+e);
+        }
 
     }
+
 }
