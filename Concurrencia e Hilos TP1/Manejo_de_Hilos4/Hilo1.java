@@ -1,4 +1,3 @@
-import javax.naming.InterruptedNamingException;
 
 public class Hilo1 extends Thread{
     
