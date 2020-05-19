@@ -5,10 +5,10 @@
 // Año:         2020
 //  
 // Descripcion:     
-// 2. Desarrollar una clase que extienda de la clase <200b> Thread<200b> . De esta forma podremos crear múltiples hilos que ejecuten el mismo 
-// método <200b> run <200b> de esta clase accediendo al mismo espacio de memoria de este objeto. Ejecutar el programa, ver lo que hace.
+// 4. En base a ejercicio anterior, asignar prioridades a los distintos competidores. Y evalua
 //
 public class ClaseQueExtiendeDeThread extends Thread{
+
 	int numero_int;
 //Como al poner this.getName() muestra por pantalla 
 //0Thread-1
