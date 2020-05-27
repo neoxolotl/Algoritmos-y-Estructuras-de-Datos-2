@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class Hilo4 extends Thread{
     
 
@@ -13,6 +15,22 @@ public class Hilo4 extends Thread{
             }catch (InterruptedException e){
                 System.out.println("Error en la clase Hilo 4 " +e );
             }
+
+/*
+ * Graba Archivo
+ */
+File file = new File("write.txt");
+FileWriter writer;
+try {
+    writer = new FileWriter(file, true);
+    PrintWriter printer = new PrintWriter(writer);
+    printer.append("A-");
+    printer.close();
+} catch (IOException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+
 
         }
 

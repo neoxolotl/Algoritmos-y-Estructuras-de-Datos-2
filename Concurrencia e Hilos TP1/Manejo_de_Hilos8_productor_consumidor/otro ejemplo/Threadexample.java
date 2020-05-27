@@ -1,22 +1,17 @@
 // Java program to implement solution of producer 
 // consumer problem. 
-//
-//
-//
-//Sincronizar hilos. Realizar un ejemplo de sincronización de hilos, donde un hilo sea el productor de un contenido y el otro hilo en consumidor. Ambos hilos deberán trabajar conjunto, donde el primero entrega un número y queda a espera del segundo hilo, que lo muestre en pantalla. Una vez que el número fue consumido, el hilo inicial vuelve a generar un número y se repite el ciclo unas 10 iteraciones
-//
-//
   
 import java.util.LinkedList; 
   
-public class Productor_Consumidor { 
+public class Threadexample { 
     public static void main(String[] args) 
         throws InterruptedException 
     { 
-        // Objeto de una clase que tiene ambos produce() y metodos consume()  
+        // Object of a class that has both produce() 
+        // and consume() methods 
         final PC pc = new PC(); 
   
-        // Crear un hilo productor
+        // Create producer thread 
         Thread t1 = new Thread(new Runnable() { 
             @Override
             public void run() 
@@ -30,7 +25,7 @@ public class Productor_Consumidor {
             } 
         }); 
   
-        // Crear un hilo consumidor
+        // Create consumer thread 
         Thread t2 = new Thread(new Runnable() { 
             @Override
             public void run() 
@@ -44,72 +39,75 @@ public class Productor_Consumidor {
             } 
         }); 
   
-        // Iniciar ambos hilos 
+        // Start both threads 
         t1.start(); 
         t2.start(); 
   
-        // t1 finaliza antes de   t2 
+        // t1 finishes before t2 
         t1.join(); 
         t2.join(); 
     } 
   
-    // Esta clase tiene una lista, productor (agrega elementos a la lista y consume (elimina elementos
+    // This class has a list, producer (adds items to list 
+    // and consumber (removes items). 
     public static class PC { 
   
-        // Crea una lista compartida por el productor y consumidor  su tamaño es 2  
+        // Create a list shared by producer and consumer 
+        // Size of list is 2. 
         LinkedList<Integer> list = new LinkedList<>(); 
         int capacity = 2; 
   
-        // Funcion llamada por el hilo productor 
+        // Function called by producer thread 
         public void produce() throws InterruptedException 
         { 
             int value = 0; 
             while (true) { 
                 synchronized (this) 
                 { 
-                    // el hilo productor espera mientra la lista este llena
+                    // producer thread waits while list 
+                    // is full 
                     while (list.size() == capacity) 
                         wait(); 
   
-                    System.out.println("Productor produce-"
+                    System.out.println("Producer produced-"
                                        + value); 
   
-                    // inserta los trabajos en la lista 
+                    // to insert the jobs in the list 
                     list.add(value++); 
   
-                    // notifica al hilo consumidor que ahora puede comenzar a consumir
+                    // notifies the consumer thread that 
+                    // now it can start consuming 
                     notify(); 
   
-                    // el sleep es para facilitar el funcionamiento y poder entender bien que hace 
+                    // makes the working of program easier 
+                    // to  understand 
                     Thread.sleep(1000); 
                 } 
             } 
         } 
   
-        // Funcion llamada por el hilo consumidor
+        // Function called by consumer thread 
         public void consume() throws InterruptedException 
         { 
             while (true) { 
                 synchronized (this) 
                 { 
-  
-		
-    		    // el hilo consumidor espera mientras la lista este vacia 
+                    // consumer thread waits while list 
+                    // is empty 
                     while (list.size() == 0) 
                         wait(); 
   
-                    // para recuperar el primer trabajo en la lista
+                    // to retrive the ifrst job in the list 
                     int val = list.removeFirst(); 
   
-                    System.out.println("Consumidor consume-"
+                    System.out.println("Consumer consumed-"
                                        + val); 
   
-                    // levantar o despertar el hilo productor
+                    // Wake up producer thread 
                     notify(); 
   
-                    // y dormir
+                    // and sleep 
                     Thread.sleep(1000); 
-		
                 } 
             } 
         } 
