@@ -7,7 +7,8 @@ public class Hilo3 extends Thread{
     public void run() {
         for( int i=0; i<= 5; i++) {
             //System.out.print("S");
-	    System.out.print("S");
+	
+	    System.out.print("-Hilo3");
 
             try{
 

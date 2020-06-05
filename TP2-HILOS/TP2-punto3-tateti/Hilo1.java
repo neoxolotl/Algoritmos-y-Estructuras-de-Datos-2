@@ -1,19 +1,12 @@
-import java.util.Random;
+import java.io.*;
 
-
-public class Hilo2 extends Thread{
+public class Hilo1 extends Thread{
     
         @Override
         public void run() {
 
+            System.out.println("Hola bienvenido al juego Ta-te-ti");
 
-
- 		System.out.println("Entre su jugada: ");
-
-
-
-
-/*
                 try{
 
                     Hilo1.sleep(1000);
@@ -22,12 +15,9 @@ public class Hilo2 extends Thread{
 
                 }
 
-*/
-           
+            }
 
-	    }
-}
-
+        }
 
 
 

@@ -1,3 +1,10 @@
+// Universidad M. Champagnat. 
+// 
+// Materia: 	Algoritmos y Estructuras de datos II
+// Autor: 	Fernando G Sosa
+// Año:		2020
+
+
 import java.io.*;
 
 public class Hilo1 extends Thread{
@@ -5,8 +12,7 @@ public class Hilo1 extends Thread{
         @Override
         public void run() {
             for( int i=0; i<= 5; i++) {
-                //System.out.print(i+": S");
-		System.out.print("S");
+		System.out.print("SO");
 
 
                 try{
@@ -21,21 +27,22 @@ public class Hilo1 extends Thread{
 /*
  * Graba Archivo
  */
-    File file = new File("write.txt");
-    FileWriter writer;
-    try {
-        writer = new FileWriter(file, true);
-        PrintWriter printer = new PrintWriter(writer);
-        printer.append("S");
-        printer.close();
-    } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-    }
+		    File file = new File("write.txt");
+    			FileWriter writer;
+    			try {
+        		writer = new FileWriter(file, true);
+        		PrintWriter printer = new PrintWriter(writer);
+        		printer.append("SO");
+        		printer.close();
+    			} catch (IOException e) {
+        		// TODO Auto-generated catch block
+       			 e.printStackTrace();
+    			}
 
             }
 
         }
 
-
 }
+
+

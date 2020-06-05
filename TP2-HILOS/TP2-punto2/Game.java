@@ -1,16 +1,13 @@
- 
-/**
- *
- */
-//package com.shreesoft.game;
+ // Universidad M. Champagnat. 
+// 
+// Materia: 	Algoritmos y Estructuras de datos II
+// Autor: 	Fernando G Sosa
+// Año:		2020
+
  
 import java.util.Random;
 import java.util.Scanner;
  
-/**
- * @author srihari
- *
- */
 public class Game {
  
         public static final String PIEDRA = "R";
